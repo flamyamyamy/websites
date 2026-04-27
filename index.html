@@ -7,8 +7,6 @@
 
     <link rel="stylesheet" href="main.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-
-    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body>
 
@@ -18,7 +16,13 @@
 <nav class="nav">
     <span class="nav-logo">&gt; flamyamys portfolio</span>
 
-    <div class="nav-links">
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <div class="nav-links" id="nav-links">
         <a href="/about">About Me</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
@@ -70,7 +74,6 @@
             </div>
 
             <h3>Yuna Bot</h3>
-
             <p>
                 Advanced Discord moderation and utility bot featuring scalable PostgreSQL infrastructure,
                 modular architecture and modern command handling.
@@ -100,10 +103,7 @@
 
         <div class="skill-card">
             <h3>Legal Studies</h3>
-            <p>
-                Focused on European Union Law, Austrian Law, German Law,
-                U.S. Legal Systems and UK/Common Law fundamentals.
-            </p>
+            <p>Focused on European Union Law, Austrian Law, German Law, U.S. Legal Systems and UK/Common Law fundamentals.</p>
         </div>
     </div>
 </section>
@@ -120,7 +120,6 @@ const terminalTexts = [
 ];
 
 const typedText = document.getElementById("typed-text");
-
 let textIndex = 0;
 let charIndex = 0;
 let deleting = false;
@@ -147,6 +146,13 @@ function typeLoop() {
 }
 
 typeLoop();
+
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("nav-links");
+
+hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
 </script>
 
 </body>
