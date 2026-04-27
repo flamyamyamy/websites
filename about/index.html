@@ -16,7 +16,13 @@
 <nav class="nav">
     <span class="nav-logo">&gt; About Amy</span>
 
-    <div class="nav-links">
+    <div class="hamburger" id="hamburger-about">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <div class="nav-links" id="nav-links-about">
         <a href="/">Portfolio</a>
         <a href="/imprint">Imprint</a>
     </div>
@@ -94,6 +100,15 @@
         </div>
     </div>
 </section>
+
+<script>
+const hamburgerAbout = document.getElementById("hamburger-about");
+const navLinksAbout = document.getElementById("nav-links-about");
+
+hamburgerAbout.addEventListener("click", () => {
+    navLinksAbout.classList.toggle("active");
+});
+</script>
 
 </body>
 </html>
